@@ -72,16 +72,25 @@ const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
+                        "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-300 relative group",
                         isActive
-                          ? "bg-sidebar-accent text-sidebar-primary font-medium"
-                          : "text-sidebar-foreground hover:bg-sidebar-accent/50",
+                          ? "bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold shadow-lg"
+                          : "text-sidebar-foreground hover:bg-sidebar-accent/70 hover:translate-x-1",
                         collapsed && "justify-center"
                       )
                     }
+                    style={({ isActive }) =>
+                      isActive ? { boxShadow: 'var(--neon-primary)' } : {}
+                    }
                   >
-                    <item.icon className="h-5 w-5 flex-shrink-0" />
-                    {!collapsed && <span>{item.label}</span>}
+                    <item.icon className={cn(
+                      "h-5 w-5 flex-shrink-0 transition-transform duration-300",
+                      "group-hover:scale-110"
+                    )} />
+                    {!collapsed && <span className="relative z-10">{item.label}</span>}
+                    {!collapsed && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                    )}
                   </NavLink>
                 ))}
               </div>
@@ -101,16 +110,25 @@ const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
+                        "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-300 relative group",
                         isActive
-                          ? "bg-sidebar-accent text-sidebar-primary font-medium"
-                          : "text-sidebar-foreground hover:bg-sidebar-accent/50",
+                          ? "bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold shadow-lg"
+                          : "text-sidebar-foreground hover:bg-sidebar-accent/70 hover:translate-x-1",
                         collapsed && "justify-center"
                       )
                     }
+                    style={({ isActive }) =>
+                      isActive ? { boxShadow: 'var(--neon-primary)' } : {}
+                    }
                   >
-                    <item.icon className="h-5 w-5 flex-shrink-0" />
-                    {!collapsed && <span>{item.label}</span>}
+                    <item.icon className={cn(
+                      "h-5 w-5 flex-shrink-0 transition-transform duration-300",
+                      "group-hover:scale-110"
+                    )} />
+                    {!collapsed && <span className="relative z-10">{item.label}</span>}
+                    {!collapsed && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                    )}
                   </NavLink>
                 ))}
               </div>
@@ -130,16 +148,25 @@ const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
+                        "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-300 relative group",
                         isActive
-                          ? "bg-sidebar-accent text-sidebar-primary font-medium"
-                          : "text-sidebar-foreground hover:bg-sidebar-accent/50",
+                          ? "bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold shadow-lg"
+                          : "text-sidebar-foreground hover:bg-sidebar-accent/70 hover:translate-x-1",
                         collapsed && "justify-center"
                       )
                     }
+                    style={({ isActive }) =>
+                      isActive ? { boxShadow: 'var(--neon-primary)' } : {}
+                    }
                   >
-                    <item.icon className="h-5 w-5 flex-shrink-0" />
-                    {!collapsed && <span>{item.label}</span>}
+                    <item.icon className={cn(
+                      "h-5 w-5 flex-shrink-0 transition-transform duration-300",
+                      "group-hover:scale-110"
+                    )} />
+                    {!collapsed && <span className="relative z-10">{item.label}</span>}
+                    {!collapsed && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                    )}
                   </NavLink>
                 ))}
               </div>
